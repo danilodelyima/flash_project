@@ -4,7 +4,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.json
   def index
-    @classrooms = Classroom.all
+    @classrooms = Classroom.where(user_id: current_user.id)
   end
 
   # GET /classrooms/1
@@ -25,7 +25,7 @@ class ClassroomsController < ApplicationController
   # POST /classrooms.json
   def create
     @classroom = Classroom.new(classroom_params)
-
+    @classroom.user_id = current_user.id
     respond_to do |format|
       if @classroom.save
         format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }
@@ -69,6 +69,6 @@ class ClassroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classroom_params
-      params.require(:classroom).permit(:name, :config_review, :user_id)
+      params.require(:classroom).permit(:name, :config_review)
     end
 end
