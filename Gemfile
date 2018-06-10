@@ -18,7 +18,10 @@ gem 'uglifier', '>= 1.3.0'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
-
+# A gem to automate using jQuery with Rails
+gem 'jquery-rails'
+# Dynamic nested forms using jQuery made easy
+gem 'cocoon'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
