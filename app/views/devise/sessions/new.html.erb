@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <h2 class="center-align">ENTRAR</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field col s6 offset-s3">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field col s6 offset-s3">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field col s6 offset-s3">
+          <%= f.label :remember_me do %>
+            <span>Lembrar de mim</span>
+            <%= f.check_box :remember_me, style:"position: static; opacity: 1;" %>
+          <% end %>
+        </div>
+      <% end -%>
+
+      <div class="actions col s6 offset-s3">
+        <%= f.submit "Entrar", class:'btn waves-effect waves-light' %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+
+
+</div>
+
