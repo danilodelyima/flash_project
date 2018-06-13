@@ -1,34 +1,37 @@
-<%= form_with(model: classroom, local: true) do |form| %>
-  <% if classroom.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
+<div class="row">
+  <%= form_with(model: classroom) do |form| %>
+    <% if classroom.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
 
-      <ul>
-      <% classroom.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% classroom.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field col s6">
+      <%= form.label :name, "Nome" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field col s6">
+      <%= form.label :config_review, "Configuração da revisão" %>
+      <%= form.text_field :config_review %>
+    </div>
+    <h3 class="my-2col s12">TÓPICOS</h3>
+      <div class="col s6" id="topics">
+        <%= form.fields_for :topics do |topic| %>
+          <%= render 'topic_fields', f: topic %>
+        <% end %>
+        <div class="links my-3">
+          <%= link_to_add_association 'Adicionar Tópico', form, :topics, class:'waves-effect waves-light btn-small' %>
+        </div>
+      </div>
+    <div class="actions col s12">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :config_review %>
-    <%= form.text_field :config_review %>
-  </div>
-  <div id="topics">
-    <% form.fields_for :topics do |topic| %>
-      <%= render 'topic_fields', f: topic %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add topics', form, :topics %>
-    </div>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

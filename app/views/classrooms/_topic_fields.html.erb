@@ -1,5 +1,9 @@
-<div class="nested-fields">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= link_to_remove_association "remove topic", f %>
+<div class="nested-fields row">
+  <div class="field col s6">
+    <%= f.label :name, "Nome" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="col s6">
+    <%= link_to_remove_association "Remover tópico", f, class:'waves-effect red darken-1 btn-small mt-3' %>
+  </div>
 </div>
