@@ -12,12 +12,12 @@
 </ul>
 <nav class="cyan lighten-1">
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
+    <a href="/" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
       <!-- Dropdown Trigger -->
       <% if user_signed_in? %>
         <li>
-          <%= link_to 'Nova Matéria', '#' %>
+          <%= link_to 'Nova Matéria', new_classroom_path %>
         </li>
         <li>
           <a class="dropdown-trigger" href="#!" data-target="dropdown1">

@@ -1,6 +1,6 @@
-<h1>Editing Classroom</h1>
+<div class="container ">
+  <%= render 'form', classroom: @classroom %>
 
-<%= render 'form', classroom: @classroom %>
-
-<%= link_to 'Show', @classroom %> |
-<%= link_to 'Back', classrooms_path %>
+  <%= link_to 'Show', @classroom %> |
+  <%= link_to 'Back', classrooms_path %>
+</div>

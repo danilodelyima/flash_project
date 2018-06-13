@@ -9,7 +9,7 @@
           <div> <%= classroom.name %> </div>
         </div>
         <div> <%= classroom.config_review %> </div>
-        <div> <%= link_to 'EDITAR', new_classroom_path %> </div>
+        <div> <%= link_to 'EDITAR', edit_classroom_path(classroom) %> </div>
       </div>
       <div class="collapsible-body">
         <ul class="collection">
