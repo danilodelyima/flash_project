@@ -2,15 +2,12 @@
  *= require_self
 */
 
-/*Libs*/
-@import "bootstrap";
-
-/*Variáveis de ambiente*/
+/* Materialize */
+@import "materialize";
+/* Variáveis de ambiente */
 @import "ambience/font";
-
-/*Regras básicas*/
+/* Regras básicas */
 @import "base/typography";
 @import "base/layout";
 @import "base/unclassed";
-
-/*Components*/
+/* Components */

@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery3
 //= require jquery_ujs
+//= require materialize
 //= require activestorage
 //= require cocoon
 //= require turbolinks
