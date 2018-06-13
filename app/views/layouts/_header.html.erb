@@ -1,9 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">FLASH</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <% if user_signed_in? %>
+    <li>
+      <a href="">Profile</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    </li>
+  <% end %>
+</ul>
+<nav class="cyan lighten-1">
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Nova Matéria', '#' %>
+        </li>
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+            <%= current_user.email %>
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      <% else %>
+        <li> <%= link_to 'ENTRAR', new_user_session_path %> </li>
+        <li> <%= link_to 'CADASTRAR', new_user_registration_path %> </li>
+      <% end %>
+    </ul>
   </div>
 </nav>
