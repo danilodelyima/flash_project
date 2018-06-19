@@ -7,11 +7,6 @@ class ClassroomsController < ApplicationController
     @classrooms = Classroom.where(user_id: current_user.id)
   end
 
-  # GET /classrooms/1
-  # GET /classrooms/1.json
-  def show
-  end
-
   # GET /classrooms/new
   def new
     @classroom = Classroom.new
@@ -28,7 +23,7 @@ class ClassroomsController < ApplicationController
     @classroom.user_id = current_user.id
     respond_to do |format|
       if @classroom.save
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }
+        format.html { redirect_to classrooms_path, notice: 'Classroom was successfully created.' }
         format.json { render :show, status: :created, location: @classroom }
       else
         format.html { render :new }

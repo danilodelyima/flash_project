@@ -4,7 +4,7 @@ class FlashcardsController < ApplicationController
   # GET /flashcards
   # GET /flashcards.json
   def index
-    @flashcards = Flashcard.all
+    @flashcards = Flashcard.where(topic_id: params['topic_id'])
   end
 
   # GET /flashcards/1
@@ -69,6 +69,6 @@ class FlashcardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flashcard_params
-      params.require(:flashcard).permit(:question, :answer, :correct, :topic_id)
+      params.require(:flashcard).permit(:question, :answer, :correct, :topic_id, :classroom_id)
     end
 end

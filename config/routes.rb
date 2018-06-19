@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :classrooms do
+  resources :classrooms, except: [:show] do
     resources :topics do
       resources :flashcards
     end
