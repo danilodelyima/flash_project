@@ -1,0 +1,20 @@
+#card {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.front,
+.back {
+  padding: 50px;
+  text-align: center;
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.back {
+  background-color: aqua;
+}
+
+.front {
+  background-color: bisque;
+}
