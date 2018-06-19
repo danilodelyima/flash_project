@@ -14,9 +14,17 @@ calculo_1 = Classroom.create(name:'Cálculo 1',
                              config_review:'1-2-7-30',
                              user_id: danilo.id)
 
+calculo_2 = Classroom.create(name:'Cálculo 2',
+                             config_review:'1-2-7-30',
+                             user_id: danilo.id)
+
 limite = Topic.create(name:'Limite', classroom_id: calculo_1.id)
 Topic.create(name:'Derivada', classroom_id: calculo_1.id)
 Topic.create(name:'Integral', classroom_id: calculo_1.id)
+
+Topic.create(name:'Sequências', classroom_id: calculo_2.id)
+Topic.create(name:'Séries', classroom_id: calculo_2.id)
+Topic.create(name:'Equações diferenciais ordinárias', classroom_id: calculo_2.id)
 
 Flashcard.create(question: 'Qual o limite de uma constante?',
                  answer: 'É a própria constante',
