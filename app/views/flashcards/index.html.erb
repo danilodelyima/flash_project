@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
-
+<div class="caroussel">
 <% @flashcards.each do |flashcard| %>
-  <div id="card">
-    <div class="front">
-      <%= flashcard.question %>
-    </div>
-    <div class="back">
-      <%= flashcard.answer %>
-    </div>
+  <div class="slick">
+    <%= form_with(model: flashcard, url: classrooms_path) do |form| %>
+      <div id="card" class="flashcard">
+        <div class="front">
+          <%= form.text_field :question, disabled: true %>
+        </div>
+        <div class="back">
+          <%= form.text_field :answer, disabled: true %>
+          <br>
+        </div>
+      </div>
+    <% end %>
   </div>
 <% end %>
+</div>

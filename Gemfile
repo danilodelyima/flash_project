@@ -13,6 +13,8 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # Materialize Sass version for Rails Asset Pipeline
 gem 'materialize-sass', '~> 1.0.0.rc1'
+# Integrates Slick carousel, a jQuery plugin, into your Rails app
+gem "jquery-slick-rails"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

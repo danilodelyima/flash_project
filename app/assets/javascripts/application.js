@@ -16,5 +16,6 @@
 //= require materialize
 //= require activestorage
 //= require cocoon
+//= require jquery.slick
 //= require turbolinks
 //= require_tree .
