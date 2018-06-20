@@ -1,14 +1,37 @@
 <p id="notice"><%= notice %></p>
-<div class="caroussel">
+<div class="caroussel mt-5">
 <% @flashcards.each do |flashcard| %>
   <div class="slick">
     <%= form_with(model: flashcard, url: classrooms_path) do |form| %>
-      <div id="card" class="flashcard">
+      <div class="flashcard">
         <div class="front">
-          <%= form.text_field :question, disabled: true %>
+          <div class="p-3">
+            <%= form.text_field :question, disabled: true, class:'b-none' %>
+          </div>
+          <div class="stick-bottom w-100">
+            <button class="continue waves-effect blue lighten-2 btn-flat w-100">RESPOSTA</button>
+          </div>
         </div>
         <div class="back">
-          <%= form.text_field :answer, disabled: true %>
+          <div class="p-3">
+            <%= form.text_field :answer, disabled: true, class:'b-none' %>
+          </div>
+          <div class="stick-bottom w-100">
+            <div class="row m-0">
+              <div class="col s6 p-0">
+                <button class="waves-effect green btn-flat w-100"
+                        onclick="ifCorrect(true, <%= flashcard.id %>)">
+                  <i class="large material-icons">check</i>
+                </button>
+              </div>
+              <div class="col s6 p-0">
+                <button class="waves-effect red btn-flat w-100"
+                        onclick="ifCorrect(false,<%= flashcard.id %>)">
+                  <i class="large material-icons">clear</i>
+                </button>
+              </div>
+            </div>
+          </div>
           <br>
         </div>
       </div>

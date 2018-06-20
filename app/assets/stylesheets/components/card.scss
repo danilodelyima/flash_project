@@ -1,20 +1,27 @@
-#card {
+.flashcard {
   margin: 0 auto;
   width: 50%;
+  height: 400px;
+
+  .waves-effect {
+    color: white;
+  }
+
+  input {
+    text-align: center;
+  }
 }
 
 .front,
 .back {
-  padding: 50px;
   text-align: center;
   font-weight: 200;
   font-size: 30px;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 2px 2px 15px grey;
+  background-color: white;
 }
 
-.back {
-  background-color: aqua;
-}
-
-.front {
-  background-color: bisque;
+.slick-slide {
+  height: 410px;
 }

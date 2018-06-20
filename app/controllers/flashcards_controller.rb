@@ -7,18 +7,9 @@ class FlashcardsController < ApplicationController
     @flashcards = Flashcard.where(topic_id: params['topic_id'])
   end
 
-  # GET /flashcards/1
-  # GET /flashcards/1.json
-  def show
-  end
-
   # GET /flashcards/new
   def new
     @flashcard = Flashcard.new
-  end
-
-  # GET /flashcards/1/edit
-  def edit
   end
 
   # POST /flashcards
@@ -37,18 +28,10 @@ class FlashcardsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /flashcards/1
-  # PATCH/PUT /flashcards/1.json
-  def update
-    respond_to do |format|
-      if @flashcard.update(flashcard_params)
-        format.html { redirect_to @flashcard, notice: 'Flashcard was successfully updated.' }
-        format.json { render :show, status: :ok, location: @flashcard }
-      else
-        format.html { render :edit }
-        format.json { render json: @flashcard.errors, status: :unprocessable_entity }
-      end
-    end
+  def correct
+    @flashcard = Flashcard.find(params[:id])
+    @flashcard.update(correct: params[:correct])
+    p @flashcard
   end
 
   # DELETE /flashcards/1
